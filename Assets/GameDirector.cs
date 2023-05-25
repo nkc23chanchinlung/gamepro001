@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameDirector : MonoBehaviour
 {
     GameObject hpGauge;
+    GameObject kyouri;
     // Start is called before the first frame update
     void Start()
     {
         this.hpGauge = GameObject.Find("hpGauge");
+        this.kyouri = GameObject.Find("Kyouri");
     }
 
 
@@ -20,6 +24,10 @@ public class GameDirector : MonoBehaviour
         float timer = 0f;
         timer += Time.deltaTime;
         this.hpGauge.GetComponent<Image>().fillAmount -= timer*0.025f;
+
+
+        //this.kyouri.GetComponent<TextMeshProUGUI>().text = timer + "km";
+       
     }
     public void DecreaseHp()
     {
