@@ -26,6 +26,11 @@ public class GameDirector : MonoBehaviour
         this.hpGauge.GetComponent<Image>().fillAmount -= timer*0.025f;
 
 
+        if(this.hpGauge.GetComponent<Image>().fillAmount<=0f)
+        {
+            SceneManager.LoadScene("title");
+        }
+
         //this.kyouri.GetComponent<TextMeshProUGUI>().text = timer + "km";
        
     }
