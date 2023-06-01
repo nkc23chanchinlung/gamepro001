@@ -5,42 +5,53 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     GameObject player;
-    GameObject enemy;
-    // Start is called before the first frame update
+    GameObject fireball;
+
+    //Start is called before the first frame update
     void Start()
     {
-        this.player = GameObject.Find("MyChar_0");
-        this.enemy = GameObject.Find("MyShot_0");
+        this.player = GameObject.Find("player");
+        this.fireball = GameObject.Find("Fireball");
+
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
-        transform.Translate(-0.1f,0,0);
+        transform.Translate(-0.1f, 0, 0);
         if (transform.position.x < -9)
         {
             Destroy(gameObject);
         }
 
-        Vector2 p1= transform.position;
-        Vector2 p2 = this.player.transform.position; 
-        Vector2 dir=p1 - p2;
-        float d =dir.magnitude;
+        Vector2 p1 = transform.position;
+        Vector2 p2 = this.player.transform.position;
+        //Vector2 p3 = this.fireball.transform.position;
+        Vector2 dir = p1 - p2;
+        //Vector2 fir = p1 - p3;
+        //float e = fir.magnitude;
+        float d = dir.magnitude;
         float r1 = 0.5f;
         float r2 = 1.0f;
 
 
 
-        if(d<r1+r2)
+        if (d < r1 + r2)
         {
 
             GameObject director = GameObject.Find("GameDirector");
             director.GetComponent<GameDirector>().DecreaseHp();
-            
-            Destroy (gameObject);
+
+            Destroy(gameObject);
+        //}
+        //if (e < r1 + r2)
+        //{
+        //    GameObject fireball = GameObject.Find("GameDirector");
+        //    fireball.GetComponent<GameDirector>().IncreaseHp();
+        //    Destroy(gameObject);
         }
 
-       
+
 
 
     }

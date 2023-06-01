@@ -35,5 +35,14 @@ public class Fireball : MonoBehaviour
 
         //    Destroy(gameObject);
         //}
+
+    }
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        //Debug.Log(OnTriggerEnter);
+        if (c.gameObject.name == "EnemyPrefab")
+        {
+            Destroy(gameObject);
+        }
     }
 }

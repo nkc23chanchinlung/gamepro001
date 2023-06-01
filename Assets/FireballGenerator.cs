@@ -9,7 +9,7 @@ public class FireballGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.charator = GameObject.Find("MyChar_0");
+        this.charator = GameObject.Find("player");
          
         
     }

@@ -14,7 +14,7 @@ public class GameDirector : MonoBehaviour
     void Start()
     {
         this.hpGauge = GameObject.Find("hpGauge");
-        this.kyouri = GameObject.Find("Kyouri");
+       // this.kyouri = GameObject.Find("Kyouri");
     }
 
 
@@ -45,4 +45,6 @@ public class GameDirector : MonoBehaviour
     {
         this.hpGauge.GetComponent<Image>().fillAmount += 0.1f;
     }
+
+
 }
