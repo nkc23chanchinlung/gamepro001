@@ -24,5 +24,6 @@ public class KM : MonoBehaviour
        
         timer += Time.time;
         this.km.GetComponent<TextMeshProUGUI>().text = timer.ToString("F2") + "km";
+        
     }
 }

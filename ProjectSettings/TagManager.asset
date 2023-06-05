@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - EnemyPrefab
+  - Fire
+  - Undefined
+  - Enemy
   layers:
   - Default
   - TransparentFX

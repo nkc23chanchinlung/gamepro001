@@ -14,7 +14,7 @@ public class GameDirector : MonoBehaviour
     void Start()
     {
         this.hpGauge = GameObject.Find("hpGauge");
-       // this.kyouri = GameObject.Find("Kyouri");
+       
     }
 
 
@@ -31,7 +31,7 @@ public class GameDirector : MonoBehaviour
             SceneManager.LoadScene("title");
         }
 
-        //this.kyouri.GetComponent<TextMeshProUGUI>().text = timer + "km";
+       
        
     }
     public void DecreaseHp()
@@ -43,7 +43,7 @@ public class GameDirector : MonoBehaviour
     
     public void IncreaseHp()
     {
-        this.hpGauge.GetComponent<Image>().fillAmount += 0.1f;
+        this.hpGauge.GetComponent<Image>().fillAmount += 0.05f;
     }
 
 

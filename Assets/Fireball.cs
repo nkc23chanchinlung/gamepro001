@@ -5,11 +5,12 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 
 {
-    GameObject enemy;
+   
+    
     // Start is called before the first frame update
     void Start()
     {
-        this.enemy = GameObject.Find("EnemyPrefab");
+        
     }
 
     // Update is called once per frame
@@ -20,29 +21,16 @@ public class Fireball : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //Vector2 p1 = transform.position;
-        //Vector2 p2 = this.enemy.transform.position;
-        //Vector2 dir = p1 - p2;
-        //float d = dir.magnitude;
-        //float r1 = 0.5f;
-        //float r2 = 1.0f;
-
-        //if (d < r1 + r2)
-        //{
-
-        //    GameObject director = GameObject.Find("GameDirector");
-        //    director.GetComponent<GameDirector>().DecreaseHp();
-
-        //    Destroy(gameObject);
-        //}
+        
 
     }
-    void OnTriggerEnter2D(Collider2D c)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log(OnTriggerEnter);
-        if (c.gameObject.name == "EnemyPrefab")
+        if (collision.CompareTag("Enemy") == true)
         {
             Destroy(gameObject);
         }
     }
 }
+    
+

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,15 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         this.player = GameObject.Find("player");
-        this.fireball = GameObject.Find("Fireball");
+        
 
+    }
+    private void OnParticleCollision(GameObject obj)
+    {
+        if (obj.tag == "Fire")
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     //Update is called once per frame
@@ -26,10 +34,7 @@ public class EnemyController : MonoBehaviour
 
         Vector2 p1 = transform.position;
         Vector2 p2 = this.player.transform.position;
-        //Vector2 p3 = this.fireball.transform.position;
         Vector2 dir = p1 - p2;
-        //Vector2 fir = p1 - p3;
-        //float e = fir.magnitude;
         float d = dir.magnitude;
         float r1 = 0.5f;
         float r2 = 1.0f;
@@ -43,16 +48,21 @@ public class EnemyController : MonoBehaviour
             director.GetComponent<GameDirector>().DecreaseHp();
 
             Destroy(gameObject);
-        //}
-        //if (e < r1 + r2)
-        //{
-        //    GameObject fireball = GameObject.Find("GameDirector");
-        //    fireball.GetComponent<GameDirector>().IncreaseHp();
-        //    Destroy(gameObject);
+       
         }
+        
 
 
 
 
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Fire") == true)
+        {
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().IncreaseHp();
+            Destroy(gameObject) ;
+        }
     }
 }

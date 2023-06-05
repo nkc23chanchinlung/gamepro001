@@ -6,7 +6,7 @@ public class FireballGenerator : MonoBehaviour
 {
     public GameObject FireballPrefab;
     GameObject charator;
-    // Start is called before the first frame update
+   // Start is called before the first frame update
     void Start()
     {
         this.charator = GameObject.Find("player");
@@ -24,4 +24,7 @@ public class FireballGenerator : MonoBehaviour
             go.transform.position = x;
         }
     }
+   
 }
+
+
