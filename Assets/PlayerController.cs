@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]private float _minX=-10f;
-    [SerializeField] private float _minX = -0f;
+    //[SerializeField]private float _minX=-10f;
+    //[SerializeField] private float _minX = -0f;
     Animator anime;
     // Start is called before the first frame update
     void Start()
